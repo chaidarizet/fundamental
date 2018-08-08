@@ -1,0 +1,36 @@
+<title>Soal 3</title>
+<h2>Login Form</h2>
+<form>
+	<p>Username</p> <input type="text" name="usern">
+	<p>Password</p> <input type="pass" name="pword"> <br>
+	<button onclick="validate()">Login</button>
+</form>
+
+<script>
+	
+	function validate() {
+    var un = document.getElementById("usern").value;
+    var pw = document.getElementById("pword").value;
+    var valid = false;
+
+    var data = [["mbuy","mbuy123"]["ade", "ade123"]];
+
+    for (var i=0; i <data.length; i++) {
+    	for(var j=1; j<i; j++){
+	        if ((un == data[i][j]) && (pw == data[i][j])) {
+	            valid = true;
+	            break;
+	        }
+	     }
+    }
+
+    if (valid) {
+        alert ("Login Sukses");
+    }
+    else {
+        alert("Salah Login")
+        document.getElementById("pword").value = "";
+        document.getElementById("usern").value = "";
+    }
+}
+</script>
